@@ -1,10 +1,11 @@
 // Bottom Navigation Bar Widget
 import 'package:flutter/material.dart';
+import 'package:moreonlife/Assesments.dart';
 import 'package:moreonlife/assessment_detail_screen.dart';
 import 'package:moreonlife/recommendations.dart';
 import 'package:moreonlife/userProfile.dart';
 
-import '../quiz_screen.dart';
+
 class BottomNavBar extends StatelessWidget {
   const BottomNavBar({super.key});
 
@@ -35,7 +36,7 @@ class BottomNavBar extends StatelessWidget {
             }),
             _buildNavButton(Icons.assessment, 'Assessments', () {
               // Navigate to Assessments
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>WellnessAssessmentScreen()));
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>AssessmentDetailScreen()));
             }),
             _buildNavButton(Icons.insights, 'Insights', () {
               // Navigate to Insights
