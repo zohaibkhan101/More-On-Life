@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:moreonlife/login_screen.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class RecommendationsScreen extends StatelessWidget {
@@ -20,11 +21,7 @@ class RecommendationsScreen extends StatelessWidget {
       ),
       body: Container(
         decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            colors: [Color(0xFFE3F2FD), Color(0xFFBBDEFB)],
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-          ),
+          color: Colors.white
         ),
         child: SingleChildScrollView(
           child: Padding(
@@ -156,9 +153,7 @@ void main() {
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: RecommendationsScreen(
-        responses: {}, // Pass the appropriate responses map here
-      ),
+      home: LoginScreen(), // Change this to your desired initial screen
     ),
   );
 }
