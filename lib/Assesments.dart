@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:moreonlife/quiz_screen.dart';
 import 'widgets/NavBar.dart'; // Ensure this import is correct
+ 
 
 class AssessmentDetailScreen extends StatelessWidget {
   const AssessmentDetailScreen({super.key});
@@ -41,6 +43,12 @@ class AssessmentDetailScreen extends StatelessWidget {
                     title: 'Fitness',
                     subtitle: 'Get fit, stay healthy.',
                     color: Colors.greenAccent,
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const WellnessAssessmentScreen()),
+                      );
+                    },
                   ),
                   _buildAssessmentItem(
                     context,
@@ -66,7 +74,7 @@ class AssessmentDetailScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildAssessmentItem(BuildContext context, {required IconData icon, required String title, required String subtitle, required Color color}) {
+  Widget _buildAssessmentItem(BuildContext context, {required IconData icon, required String title, required String subtitle, required Color color, VoidCallback? onTap}) {
     return Card(
       margin: const EdgeInsets.symmetric(vertical: 8),
       shape: RoundedRectangleBorder(
@@ -95,9 +103,7 @@ class AssessmentDetailScreen extends StatelessWidget {
           ),
         ),
         trailing: const Icon(Icons.arrow_forward_ios, size: 16),
-        onTap: () {
-          // Handle item tap
-        },
+        onTap: onTap, // Use the onTap callback
       ),
     );
   }
