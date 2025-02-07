@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart'; // Import the SVG package
+// import 'package:flutter_svg/svg.dart'; // Import the SVG package
 import 'package:google_fonts/google_fonts.dart';
 import 'package:moreonlife/sign_up_name_screen.dart';
 
@@ -37,11 +37,13 @@ class _SignUpEmailScreenState extends State<SignUpEmailScreen> {
           child: Column(
             children: [
               // Logo SVG Asset
-              SvgPicture.asset(
-                'assets/sign_up.svg', // Path to your SVG logo
-                width: 150,
-                height: 150,
-              ),
+              // SvgPicture.asset(
+              //   'assets/sign_up.svg', // Path to your SVG logo
+              //   width: 150,
+              //   height: 150,
+              // ),
+              Image.asset('assets/Email_SignUp.png', width: 342),
+
               const SizedBox(height: 30),
 
               // "Create Account" Heading

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart'; // For SVG support
 import 'package:google_fonts/google_fonts.dart';
+import 'package:moreonlife/SignUpWeightScreen.dart';
 import 'password_screen.dart'; // Import the PasswordScreen
 
 class SignUpGenderScreen extends StatefulWidget {
@@ -26,8 +27,8 @@ class _GenderSelectorState extends State<SignUpGenderScreen> {
             // SVG Illustration (sign_up.svg)
             SvgPicture.asset(
               'assets/sign_up.svg', // Path to your SVG file
-              width: 150,
-              height: 150,
+              width: 342,
+              
             ),
             const SizedBox(height: 24),
 
@@ -113,7 +114,7 @@ class _GenderSelectorState extends State<SignUpGenderScreen> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const PasswordScreen(),
+                      builder: (context) => const SignUpWeightScreen(),
                     ),
                   );
                 }

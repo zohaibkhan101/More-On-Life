@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:moreonlife/assessment_detail_screen.dart';
+import 'package:moreonlife/user_Profile.dart';
+import 'package:moreonlife/user_Profile.dart';
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({super.key});
@@ -126,7 +128,10 @@ class SignUpScreen extends StatelessWidget {
                       child: ElevatedButton(
                         onPressed: () {
                           // Handle sign up
-                          Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeScreen()));
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => const UserInfoScreen()),
+                          );
                         },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: const Color(0xFF3181E5),

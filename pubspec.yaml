@@ -84,6 +84,7 @@ flutter:
      - assets/quiz_animation.json
      - assets/assessment_animation.json
      - assets/
+     - assets/Email_SignUp.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

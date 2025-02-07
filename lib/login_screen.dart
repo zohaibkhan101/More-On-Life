@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:moreonlife/assessment_detail_screen.dart';
-import 'package:moreonlife/sign_up.dart';
+//import 'package:moreonlife/sign_up.dart';
+import 'package:moreonlife/sign_up_email_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   final TextEditingController emailController = TextEditingController();
@@ -20,7 +21,7 @@ class LoginScreen extends StatelessWidget {
             children: [
               ClipRRect(
                 borderRadius: BorderRadius.circular(16), // Rounded corners
-                child: Image.asset('assets/front.png', width: 342),
+                child: Image.asset('assets/loginImage.png', width: 342),
               ),
               SizedBox(height: 30),
               Text("Log in", style: TextStyle(color: Color(0xFF36454F), fontSize: 24, fontWeight: FontWeight.bold)),
@@ -79,7 +80,7 @@ class LoginScreen extends StatelessWidget {
                   Text("No account?", style: TextStyle(color: Color(0xFF36454F), fontSize: 14)),
                   GestureDetector(
                     onTap: () {
-                     Navigator.push(context, MaterialPageRoute(builder: (context)=>SignUpScreen()));
+                     Navigator.push(context, MaterialPageRoute(builder: (context)=>SignUpEmailScreen()));
                       // Navigator.pushNamed(context, '/sign_up');()
                     },
                     child: Text(" Sign up", style: TextStyle(color: Color(0xFF3181E5), fontWeight: FontWeight.bold, fontSize: 14)),

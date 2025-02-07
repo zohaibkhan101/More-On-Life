@@ -35,7 +35,8 @@ class _SignUpNameScreenState extends State<SignUpNameScreen> {
             children: [
               const SizedBox(height: 32), // Adjust spacing
 
-              // SVG Logo
+              
+              Image.asset('assets/Name_SignUp.png', width: 342),
               ////////,
               const SizedBox(height: 24),
 

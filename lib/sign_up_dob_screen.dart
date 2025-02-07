@@ -39,11 +39,12 @@ class _SignUpDobScreenState extends State<SignUpDobScreen> {
               const SizedBox(height: 48),
 
               // SVG Illustration
-              SvgPicture.asset(
-                'assets/sign_up.svg', // Path to your SVG file
-                width: 150,
-                height: 150,
-              ),
+              // SvgPicture.asset(
+              //   'assets/sign_up.svg', // Path to your SVG file
+              //   width: 150,
+              //   height: 150,
+              // ),
+              Image.asset('assets/DOB_SignUp.png', width: 342),
               const SizedBox(height: 24),
 
               // Heading
