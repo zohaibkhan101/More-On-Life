@@ -14,9 +14,9 @@ class SignUpProgressIndicator extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            for (var label in ['Email', 'Name', 'Birthday', 'Gender', 'Pass'])
+            for (var label in ['DOB', 'Gender', 'Weight', 'Height'])
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 11),
+                padding: const EdgeInsets.symmetric(horizontal: 15),
                 child: Text(
                   label,
                   style: GoogleFonts.montserrat(
@@ -47,9 +47,9 @@ class SignUpProgressIndicator extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: List.generate(
-                5,
-                    (index) => Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 15.5),
+                4, // Updated to 4 steps
+                (index) => Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: Container(
                     width: 32,
                     height: 32,

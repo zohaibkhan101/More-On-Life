@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:moreonlife/password_screen.dart';
+// import 'package:moreonlife/Assesments.dart';
+import 'package:moreonlife/assessment_detail_screen.dart';
+// import 'package:moreonlife/password_screen.dart';
 import 'widgets/continue_button.dart';
 import 'widgets/sign_up_progress_indicator.dart';
 import 'widgets/dob_login_footer.dart';
@@ -19,7 +21,7 @@ class _SignUpHeightScreenState extends State<SignUpHeightScreen> {
 
   void navigateToNextScreen() {
     // Implement navigation to the next screen
-     Navigator.push(context, MaterialPageRoute(builder: (context)=>PasswordScreen()));
+     Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeScreen()));
   }
 
   @override
@@ -53,8 +55,8 @@ class _SignUpHeightScreenState extends State<SignUpHeightScreen> {
               ),
               const SizedBox(height: 32),
 
-              // Progress Indicator - Highlights "Height" step
-              const SignUpProgressIndicator(currentStep: 4),
+              // Progress Indicator - Highlights "Height" step (Step 4)
+              const SignUpProgressIndicator(currentStep: 3),
               const SizedBox(height: 57),
 
               // Height Input

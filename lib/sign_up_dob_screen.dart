@@ -58,8 +58,8 @@ class _SignUpDobScreenState extends State<SignUpDobScreen> {
               ),
               const SizedBox(height: 32),
 
-              // Progress Indicator - Highlights "DOB" step (Step 2)
-              const SignUpProgressIndicator(currentStep: 2),
+              // Progress Indicator - Highlights "DOB" step (Step 1)
+              const SignUpProgressIndicator(currentStep: 0),
               const SizedBox(height: 57),
 
               // Date of Birth Input

@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart'; // For SVG support
 import 'package:google_fonts/google_fonts.dart';
 import 'package:moreonlife/SignUpWeightScreen.dart';
-import 'password_screen.dart'; // Import the PasswordScreen
+// import 'password_screen.dart'; // Import the PasswordScreen
+import 'widgets/sign_up_progress_indicator.dart'; // Import the SignUpProgressIndicator
+
 
 class SignUpGenderScreen extends StatefulWidget {
   const SignUpGenderScreen({super.key});
@@ -31,6 +33,10 @@ class _GenderSelectorState extends State<SignUpGenderScreen> {
               
             ),
             const SizedBox(height: 24),
+
+            // Progress Indicator - Highlights "Gender" step (Step 2)
+            const SignUpProgressIndicator(currentStep: 1),
+            const SizedBox(height: 32),
 
             // "Gender" Label and Dropdown
             Padding(

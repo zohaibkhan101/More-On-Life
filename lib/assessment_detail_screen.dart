@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:moreonlife/login_screen.dart';
+import 'package:moreonlife/sign_up_dob_screen.dart'; // Import the SignUpDobScreen
+import 'package:shared_preferences/shared_preferences.dart'; // Import SharedPreferences
 import 'widgets/assessment_header.dart';
 import 'widgets/NavBar.dart';
-// Import the QuizScreen
+
 import 'package:moreonlife/quiz_screen.dart';
 
 void main() {
@@ -35,11 +37,73 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   bool _isDarkMode = false;
+  bool _isFirstVisit = true; // Simulate first visit check
+
+  @override
+  void initState() {
+    super.initState();
+    _checkFirstVisit();
+  }
+
+  Future<void> _checkFirstVisit() async {
+    final prefs = await SharedPreferences.getInstance();
+    final isFirstVisit = prefs.getBool('isFirstVisit') ?? true;
+
+    if (isFirstVisit) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        _showProfileCompletionPrompt();
+      });
+      await prefs.setBool('isFirstVisit', false);
+    }
+  }
 
   void _toggleTheme() {
     setState(() {
       _isDarkMode = !_isDarkMode;
     });
+  }
+
+  void _showProfileCompletionPrompt() {
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      builder: (BuildContext context) {
+        return Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              const Text(
+                'Complete Your Profile',
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const SizedBox(height: 16),
+              const Text(
+                'To get the best experience, please complete your profile.',
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(height: 24),
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.pop(context); // Close the bottom sheet
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const SignUpDobScreen()),
+                    );
+                  },
+                  child: const Text('Continue'),
+                ),
+              ),
+            ],
+          ),
+        );
+      },
+    );
   }
 
   @override

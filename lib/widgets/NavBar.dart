@@ -40,7 +40,7 @@ class BottomNavBar extends StatelessWidget {
             }),
             _buildNavButton(Icons.insights, 'Insights', () {
               // Navigate to Insights
-              Navigator.push(context, MaterialPageRoute(builder:(context)=>RecommendationsScreen(responses: {},)));
+              Navigator.push(context, MaterialPageRoute(builder:(context)=>RecommendationsScreen(responses: {}, totalPoints: 0,)));
 
             }),
             _buildNavButton(Icons.person, 'Profile', () {

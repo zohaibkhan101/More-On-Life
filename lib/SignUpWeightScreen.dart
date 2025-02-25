@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+// import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:moreonlife/password_screen.dart';
+// import 'package:moreonlife/password_screen.dart';
 import 'sign_up_height_screen.dart';
 import 'widgets/continue_button.dart';
 import 'widgets/sign_up_progress_indicator.dart';
@@ -54,8 +54,8 @@ class _SignUpWeightScreenState extends State<SignUpWeightScreen> {
               ),
               const SizedBox(height: 32),
 
-              // Progress Indicator - Highlights "Weight" step
-              const SignUpProgressIndicator(currentStep: 3),
+              // Progress Indicator - Highlights "Weight" step (Step 3)
+              const SignUpProgressIndicator(currentStep: 2),
               const SizedBox(height: 57),
 
               // Weight Input

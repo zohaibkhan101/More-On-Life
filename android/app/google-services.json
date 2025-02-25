@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "725359622594",
+    "project_id": "more-on-life",
+    "storage_bucket": "more-on-life.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:725359622594:android:e624741dcb96abe8f4be5b",
+        "android_client_info": {
+          "package_name": "com.example.moreonlife"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDx_oIOb7Ft7wvHF1sS9cW6wbb8N9EDeJw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
