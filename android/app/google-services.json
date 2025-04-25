@@ -1,26 +1,43 @@
 {
   "project_info": {
-    "project_number": "725359622594",
-    "project_id": "more-on-life",
-    "storage_bucket": "more-on-life.firebasestorage.app"
+    "project_number": "874022105786",
+    "project_id": "moreonlife-e380c",
+    "storage_bucket": "moreonlife-e380c.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:725359622594:android:e624741dcb96abe8f4be5b",
+        "mobilesdk_app_id": "1:874022105786:android:c34505c3ad832d3c4e4883",
         "android_client_info": {
           "package_name": "com.example.moreonlife"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "874022105786-nakrvntvrvumtjdgsc906acsttdpo4p2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
-          "current_key": "AIzaSyDx_oIOb7Ft7wvHF1sS9cW6wbb8N9EDeJw"
+          "current_key": "AIzaSyC0eqdaddLGBOzxWXXKjBDXdHjdAf9epF4"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "874022105786-nakrvntvrvumtjdgsc906acsttdpo4p2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "874022105786-31sdh5u1ap8go2dcv1voh400tidsme3e.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.moreonlife"
+              }
+            }
+          ]
         }
       }
     }
