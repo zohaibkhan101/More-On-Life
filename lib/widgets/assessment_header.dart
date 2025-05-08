@@ -59,15 +59,15 @@ class _AssessmentHeaderState extends State<AssessmentHeader>
   Widget build(BuildContext context) {
     return ClipRRect(
       borderRadius: const BorderRadius.only(
-        bottomLeft: Radius.circular(20),
-        bottomRight: Radius.circular(20),
+        bottomLeft: Radius.circular(0),
+        bottomRight: Radius.circular(0),
       ),
       child: Container(
         padding: const EdgeInsets.fromLTRB(24, 40, 24, 16),
         decoration: BoxDecoration(
           color: widget.isDarkMode
               ? Theme.of(context).appBarTheme.backgroundColor
-              : const Color(0xFF3550DC),
+              : const Color.fromRGBO(59, 79, 212, 1),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
