@@ -181,7 +181,7 @@ class _HomeContentState extends State<HomeContent> {
               padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
               decoration: BoxDecoration(
                 color: const Color(0xFFE3F2FD),
-                borderRadius: BorderRadius.circular(12),
+                borderRadius: BorderRadius.circular(0),
               ),
               child: Text(
                 '"The journey of a thousand miles begins with one step."',
@@ -258,7 +258,7 @@ class _HomeContentState extends State<HomeContent> {
                 return Card(
                   margin: const EdgeInsets.only(bottom: 12),
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12),
+                    borderRadius: BorderRadius.circular(0),
                   ),
                   child: ListTile(
                     leading: Icon(item['icon'], color: const Color(0xFF3181E5)),

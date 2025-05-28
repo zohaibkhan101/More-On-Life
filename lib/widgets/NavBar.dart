@@ -13,9 +13,9 @@ class BottomNavBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return ClipRRect(
         borderRadius: const BorderRadius.only(
-        topLeft: Radius.circular(20),
+        topLeft: Radius.circular(0),
 
-    topRight: Radius.circular(20),
+    topRight: Radius.circular(0),
     ),
     child:  Container(
       decoration: BoxDecoration(
