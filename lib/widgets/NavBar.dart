@@ -4,8 +4,6 @@ import 'package:moreonlife/Assesments.dart';
 import 'package:moreonlife/assessment_detail_screen.dart';
 import 'package:moreonlife/recommendations.dart';
 import 'package:moreonlife/userProfile.dart';
-
-
 class BottomNavBar extends StatelessWidget {
   const BottomNavBar({super.key});
 

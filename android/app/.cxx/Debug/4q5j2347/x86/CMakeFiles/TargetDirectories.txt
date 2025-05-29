@@ -1,0 +1,2 @@
+/Users/hassaanawan/StudioProjects/Zohaibs_Project/More-On-Life/android/app/.cxx/Debug/4q5j2347/x86/CMakeFiles/edit_cache.dir
+/Users/hassaanawan/StudioProjects/Zohaibs_Project/More-On-Life/android/app/.cxx/Debug/4q5j2347/x86/CMakeFiles/rebuild_cache.dir

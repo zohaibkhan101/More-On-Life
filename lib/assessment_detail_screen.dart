@@ -219,13 +219,23 @@ class _HomeContentState extends State<HomeContent> {
                       setState(() {
                         if (event is FlTapUpEvent) {
                           touchedIndex = touchResponse?.touchedSection?.touchedSectionIndex;
+                          if (touchedIndex == 1) { // Assuming index 2 is for Fitness
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => const WellnessAssessmentScreen()),
+                            );
+                          }
+                        }
+                        if (event is FlTapUpEvent) {
+                          touchedIndex = touchResponse?.touchedSection?.touchedSectionIndex;
                           if (touchedIndex == 2) { // Assuming index 2 is for Fitness
                             Navigator.push(
                               context,
                               MaterialPageRoute(builder: (context) => const WellnessAssessmentScreen()),
                             );
                           }
-                        } else {
+                        }
+                        else {
                           touchedIndex = -1;
                         }
                       });
