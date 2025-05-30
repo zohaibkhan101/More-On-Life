@@ -4,7 +4,7 @@ import 'package:moreonlife/sign_up.dart';
 import 'firebase_options.dart';
 import 'login_screen.dart';
 import 'otp_screen.dart';
-
+import 'signal.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   if (Firebase.apps.where((app) => app.name == '[DEFAULT]').isEmpty) {
@@ -60,7 +60,7 @@ class _MyAppState extends State<MyApp> {
       theme: _lightTheme,
       darkTheme: _darkTheme,
       themeMode: _isDarkMode ? ThemeMode.dark : ThemeMode.light,
-      home: LoginScreen(),
+      home: SignalScreen(),
       onGenerateRoute: (settings) {
         if (settings.name == '/otp') {
           final args = settings.arguments as Map<String, dynamic>;

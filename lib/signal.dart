@@ -1,98 +1,132 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MaterialApp(
-    home: MoodCheckPage(),
-    debugShowCheckedModeBanner: false,
-  ));
-}
+// Import your HomeScreen here
+// import 'home_screen.dart';
 
-class MoodCheckPage extends StatefulWidget {
+class SignalScreen extends StatefulWidget {
   @override
-  _MoodCheckPageState createState() => _MoodCheckPageState();
+  _SignalScreenState createState() => _SignalScreenState();
 }
 
-class _MoodCheckPageState extends State<MoodCheckPage> {
-  String? selectedMood;
-  final nameController = TextEditingController();
+class _SignalScreenState extends State<SignalScreen> {
+  int? selectedIndex;
+
+  final List<String> options = [
+    "I'm feeling good.",
+    "I need improvements.",
+    "I'm feeling bad.",
+  ];
+
+  final List<Color> signalColors = [
+    Colors.green,
+    Colors.yellow,
+    Colors.red,
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[200],
-      body: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Center(
+      backgroundColor: Colors.white,
+      body: Center(
+        child: SingleChildScrollView(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              TextField(
-                controller: nameController,
-                decoration: InputDecoration(
-                  labelText: "Full Name",
-                  labelStyle: TextStyle(color: Colors.blue, fontSize: 18),
-                  border: OutlineInputBorder(),
+              const SizedBox(height: 20),
+              const Text(
+                'How are you feeling ?',
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(height: 30),
+              const SizedBox(height: 40),
               Container(
-                padding: EdgeInsets.all(20),
+                padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(
-                  border: Border.all(color: Colors.blue),
-                  borderRadius: BorderRadius.circular(10),
-                  color: Colors.white,
+                  color: Colors.grey[100],
+                  borderRadius: BorderRadius.circular(16),
+                  border: Border.all(color: Colors.blue.shade100),
                 ),
-                child: Column(
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
                   children: [
-                    Text(
-                      "How are you feeling ?",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 22,
-                      ),
+                    // Traffic light as checkboxes
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: List.generate(3, (i) => _buildSignalCheckbox(i)),
                     ),
-                    SizedBox(height: 30),
-                    Row(
+                    const SizedBox(width: 24),
+                    // Options
+                    Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        // Traffic light
-                        Column(
-                          children: [
-                            _trafficLightCircle(Colors.green),
-                            _trafficLightCircle(Colors.yellow),
-                            _trafficLightCircle(Colors.red),
-                          ],
-                        ),
-                        SizedBox(width: 20),
-                        // Mood options
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              _buildRadio("I'm feeling good."),
-                              _buildRadio("I need improvements."),
-                              _buildRadio("I'm feeling bad."),
-                            ],
+                      children: List.generate(options.length, (i) {
+                        return GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              selectedIndex = i;
+                            });
+                          },
+                          child: Container(
+                            color: Colors.transparent,
+                            padding: const EdgeInsets.symmetric(vertical: 18),
+                            child: Row(
+                              children: [
+                                Text(
+                                  options[i],
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w500,
+                                    color: selectedIndex == i
+                                        ? Colors.blue
+                                        : Colors.black87,
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
-                        ),
-                      ],
+                        );
+                      }),
                     ),
                   ],
                 ),
               ),
-              SizedBox(height: 30),
-              ElevatedButton(
-                onPressed: () {
-                  print("Name: ${nameController.text}");
-                  print("Mood: $selectedMood");
-                },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.blue,
-                  padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10)),
+              const SizedBox(height: 60),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 32),
+                child: SizedBox(
+                  width: double.infinity,
+                  height: 56,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.blue,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                    ),
+                    onPressed: selectedIndex != null
+                        ? () {
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => HomeScreen(),
+                        ),
+                      );
+                    }
+                        : null,
+                    child: const Text(
+                      'CONFIRM',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        letterSpacing: 1,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
                 ),
-                child: Text("CONFIRM", style: TextStyle(fontSize: 18)),
-              )
+              ),
+              const SizedBox(height: 40),
             ],
           ),
         ),
@@ -100,29 +134,39 @@ class _MoodCheckPageState extends State<MoodCheckPage> {
     );
   }
 
-  Widget _trafficLightCircle(Color color) {
-    return Container(
-      margin: EdgeInsets.symmetric(vertical: 6),
-      width: 30,
-      height: 30,
-      decoration: BoxDecoration(
-        color: color,
-        shape: BoxShape.circle,
-        border: Border.all(color: Colors.black),
+  Widget _buildSignalCheckbox(int index) {
+    return GestureDetector(
+      onTap: () {
+        setState(() {
+          selectedIndex = index;
+        });
+      },
+      child: Container(
+        margin: const EdgeInsets.symmetric(vertical: 6),
+        width: 36,
+        height: 36,
+        decoration: BoxDecoration(
+          color: signalColors[index].withOpacity(selectedIndex == index ? 1 : 0.3),
+          shape: BoxShape.circle,
+          border: Border.all(
+            color: Colors.black26,
+            width: 2,
+          ),
+        ),
+        child: selectedIndex == index
+            ? const Icon(Icons.check, color: Colors.white, size: 22)
+            : null,
       ),
     );
   }
+}
 
-  Widget _buildRadio(String text) {
-    return RadioListTile<String>(
-      title: Text(text),
-      value: text,
-      groupValue: selectedMood,
-      onChanged: (value) {
-        setState(() {
-          selectedMood = value;
-        });
-      },
+// Dummy HomeScreen for navigation (replace with your actual HomeScreen)
+class HomeScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(child: Text('Home Screen')),
     );
   }
 }
