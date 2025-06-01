@@ -60,7 +60,7 @@ class _MyAppState extends State<MyApp> {
       theme: _lightTheme,
       darkTheme: _darkTheme,
       themeMode: _isDarkMode ? ThemeMode.dark : ThemeMode.light,
-      home: SignalScreen(),
+      home: LoginScreen(),
       onGenerateRoute: (settings) {
         if (settings.name == '/otp') {
           final args = settings.arguments as Map<String, dynamic>;

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'assessment_detail_screen.dart';
+
 // Import your HomeScreen here
 // import 'home_screen.dart';
 
@@ -161,12 +163,3 @@ class _SignalScreenState extends State<SignalScreen> {
   }
 }
 
-// Dummy HomeScreen for navigation (replace with your actual HomeScreen)
-class HomeScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(child: Text('Home Screen')),
-    );
-  }
-}

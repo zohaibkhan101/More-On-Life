@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart'; // 🔴 Add this
 import 'package:moreonlife/assessment_detail_screen.dart';
 import 'package:moreonlife/sign_up.dart';
+import 'package:moreonlife/signal.dart';
 import 'package:moreonlife/user_controller.dart';
 import 'package:moreonlife/utils.dart';
 
@@ -60,7 +61,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
       await FirebaseAuth.instance.signInWithCredential(credential);
 
-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomeScreen()));
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => SignalScreen()));
     } catch (e) {
       Utils.showAlertPopup(context, "Google Sign-In Error", e.toString());
     } finally {
@@ -116,7 +117,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   } else {
                     bool loggedIn = await signInWithEmailAndPassword();
                     if (loggedIn) {
-                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomeScreen()));
+                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => SignalScreen()));
                     }
                   }
                 },
