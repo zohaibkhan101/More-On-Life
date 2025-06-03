@@ -219,6 +219,15 @@ class _HomeContentState extends State<HomeContent> {
                       setState(() {
                         if (event is FlTapUpEvent) {
                           touchedIndex = touchResponse?.touchedSection?.touchedSectionIndex;
+                          if (touchedIndex == 0) { // Assuming index 2 is for Fitness
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => const WellnessAssessmentScreen()),
+                            );
+                          }
+                        }
+                        if (event is FlTapUpEvent) {
+                          touchedIndex = touchResponse?.touchedSection?.touchedSectionIndex;
                           if (touchedIndex == 1) { // Assuming index 2 is for Fitness
                             Navigator.push(
                               context,
@@ -232,6 +241,27 @@ class _HomeContentState extends State<HomeContent> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(builder: (context) => const WellnessAssessmentScreen()),
+                            );
+                          }
+                        }
+                        if (event is FlTapUpEvent) {
+                          touchedIndex = touchResponse?.touchedSection?.touchedSectionIndex;
+                          if (touchedIndex == 3) { // Assuming index 2 is for Fitness
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => const WellnessAssessmentScreen()),
+                            );
+                          }
+                        }
+                        if (event is FlTapUpEvent) {
+                          touchedIndex = touchResponse?.touchedSection
+                              ?.touchedSectionIndex;
+                          if (touchedIndex ==
+                              4) { // Assuming index 2 is for Fitness
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (
+                                  context) => const WellnessAssessmentScreen()),
                             );
                           }
                         }
