@@ -3,6 +3,7 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:moreonlife/login_screen.dart';
 import 'package:moreonlife/sign_up_dob_screen.dart'; // Import the SignUpDobScreen
 import 'package:shared_preferences/shared_preferences.dart'; // Import SharedPreferences
+import 'Piechart_icon_Habit_assessment.dart';
 import 'Piechart_icon_Heart_assessment.dart';
 import 'Piechart_icon_Mind_assessment.dart';
 import 'Piechart_icon_Nutrition_assessment.dart';
@@ -240,7 +241,7 @@ class _HomeContentState extends State<HomeContent> {
                         }
                         if (event is FlTapUpEvent) {
                           touchedIndex = touchResponse?.touchedSection?.touchedSectionIndex;
-                          if (touchedIndex == 2) { // Assuming index 2 is for Fitness
+                          if (touchedIndex == 2) { // Assuming index 2 is for Fitness of body
                             Navigator.push(
                               context,
                               MaterialPageRoute(builder: (context) => const WellnessAssessmentScreen()),
@@ -249,7 +250,7 @@ class _HomeContentState extends State<HomeContent> {
                         }
                         if (event is FlTapUpEvent) {
                           touchedIndex = touchResponse?.touchedSection?.touchedSectionIndex;
-                          if (touchedIndex == 3) { // Assuming index 2 is for Fitness
+                          if (touchedIndex == 3) { // Assuming index 3 is for nutrition
                             Navigator.push(
                               context,
                               MaterialPageRoute(builder: (context) => const NutritionAssessmentScreen()),
@@ -259,12 +260,11 @@ class _HomeContentState extends State<HomeContent> {
                         if (event is FlTapUpEvent) {
                           touchedIndex = touchResponse?.touchedSection
                               ?.touchedSectionIndex;
-                          if (touchedIndex ==
-                              4) { // Assuming index 2 is for Fitness
+                          if (touchedIndex == 4) { // Assuming index 4 is for Habit
                             Navigator.push(
                               context,
                               MaterialPageRoute(builder: (
-                                  context) => const WellnessAssessmentScreen()),
+                                  context) => const HabitAssessmentScreen()),
                             );
                           }
                         }
