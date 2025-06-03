@@ -260,7 +260,7 @@ class _HomeContentState extends State<HomeContent> {
                         if (event is FlTapUpEvent) {
                           touchedIndex = touchResponse?.touchedSection
                               ?.touchedSectionIndex;
-                          if (touchedIndex == 4) { // Assuming index 4 is for Habit
+                          if (touchedIndex == 4) { // Assuming index 4 is for Habit assessment
                             Navigator.push(
                               context,
                               MaterialPageRoute(builder: (
