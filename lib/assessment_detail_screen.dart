@@ -3,6 +3,7 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:moreonlife/login_screen.dart';
 import 'package:moreonlife/sign_up_dob_screen.dart'; // Import the SignUpDobScreen
 import 'package:shared_preferences/shared_preferences.dart'; // Import SharedPreferences
+import 'Piechart_icon_Nutrition_assessment.dart';
 import 'widgets/assessment_header.dart';
 import 'widgets/NavBar.dart';
 
@@ -249,7 +250,7 @@ class _HomeContentState extends State<HomeContent> {
                           if (touchedIndex == 3) { // Assuming index 2 is for Fitness
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => const WellnessAssessmentScreen()),
+                              MaterialPageRoute(builder: (context) => const NutritionAssessmentScreen()),
                             );
                           }
                         }

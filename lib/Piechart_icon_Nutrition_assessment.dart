@@ -22,7 +22,7 @@ class _NutritionAssessmentScreenState extends State<NutritionAssessmentScreen> {
 
     'Strength': [
       {
-        'question': 'How many push-ups can you do in one go?',
+        'question': 'How many push-ups can you do in one go na niger?',
         'options': [
           '55 or more (10 points)',
           '50-54 (9 points)',
