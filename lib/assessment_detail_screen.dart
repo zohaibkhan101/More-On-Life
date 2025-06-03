@@ -3,6 +3,7 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:moreonlife/login_screen.dart';
 import 'package:moreonlife/sign_up_dob_screen.dart'; // Import the SignUpDobScreen
 import 'package:shared_preferences/shared_preferences.dart'; // Import SharedPreferences
+import 'Piechart_icon_Mind_assessment.dart';
 import 'Piechart_icon_Nutrition_assessment.dart';
 import 'widgets/assessment_header.dart';
 import 'widgets/NavBar.dart';
@@ -220,16 +221,16 @@ class _HomeContentState extends State<HomeContent> {
                       setState(() {
                         if (event is FlTapUpEvent) {
                           touchedIndex = touchResponse?.touchedSection?.touchedSectionIndex;
-                          if (touchedIndex == 0) { // Assuming index 2 is for Fitness
+                          if (touchedIndex == 0) { // Assuming index 0 is for mind icon
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => const WellnessAssessmentScreen()),
+                              MaterialPageRoute(builder: (context) => const MindAssessmentScreen()),
                             );
                           }
                         }
                         if (event is FlTapUpEvent) {
                           touchedIndex = touchResponse?.touchedSection?.touchedSectionIndex;
-                          if (touchedIndex == 1) { // Assuming index 2 is for Fitness
+                          if (touchedIndex == 1) { // Assuming index 1 is for Heart assessment
                             Navigator.push(
                               context,
                               MaterialPageRoute(builder: (context) => const WellnessAssessmentScreen()),

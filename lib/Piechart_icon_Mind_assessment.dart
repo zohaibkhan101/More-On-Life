@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:moreonlife/recommendations.dart';
 
-class NutritionAssessmentScreen extends StatefulWidget {
-  const NutritionAssessmentScreen({super.key});
+class MindAssessmentScreen extends StatefulWidget {
+  const MindAssessmentScreen({super.key});
 
   @override
-  State<NutritionAssessmentScreen> createState() => _NutritionAssessmentScreenState();
+  State<MindAssessmentScreen> createState() => _MindAssessmentScreenState();
 }
 
-class _NutritionAssessmentScreenState extends State<NutritionAssessmentScreen> {
+class _MindAssessmentScreenState extends State<MindAssessmentScreen> {
   String? selectedOption;
   int currentQuestionIndex = 0;
   int totalPoints = 0; // Track total points
@@ -419,7 +419,7 @@ class _NutritionAssessmentScreenState extends State<NutritionAssessmentScreen> {
           onPressed: () => Navigator.pop(context),
         ),
         title: const Text(
-          'Nutrition Assessment',
+          'Mind Assessment',
           style: TextStyle(
             color: Colors.white,
             fontSize: 18,
