@@ -9,7 +9,7 @@ import 'Piechart_icon_Nutrition_assessment.dart';
 import 'widgets/assessment_header.dart';
 import 'widgets/NavBar.dart';
 
-import 'package:moreonlife/quiz_screen.dart';
+import 'package:moreonlife/Piechart_icon_Body_assessment.dart';
 
 void main() {
   runApp(const MyApp());
